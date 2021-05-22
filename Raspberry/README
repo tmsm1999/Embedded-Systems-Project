@@ -1,0 +1,19 @@
+Instructions:
+
+Installation:
+1 - Paste the folder CashierServer into /home/pi/
+2 - Open terminal
+3 - cd CashierServer
+4 - chmod 777 -R scripts
+5 - ./scripts/install.sh 
+6 - Go for a coffee… and wait like 30 minutes
+7 - You are done!
+
+Run server:
+1 - Open terminal
+2 - ./CashierServer/scripts/start.sh
+
+Stop server
+1 - Open terminal
+2 - ./CashierServer/scripts/stop.sh
+
