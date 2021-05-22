@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="10">
+        <TextView
+            android:id="@+id/textViewWeighting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="Weighting"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/textViewCashier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="Cashier"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="5">
+        <TextView
+            android:id="@+id/textViewtittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Embedded Systems 2020/2021"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="20">
+        <TextView
+            android:layout_marginTop="50dp"
+            android:id="@+id/textViewAndre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Andre Almeida"
+            android:layout_gravity="center"
+
+            />
+        <TextView
+            android:id="@+id/textViewEdson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Edson Ferreira"
+            android:layout_gravity="center"
+
+            />
+        <TextView
+            android:id="@+id/textViewFabiana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Fabiana Alves"
+            android:layout_gravity="center"
+
+            />
+        <TextView
+            android:id="@+id/textViewTomas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Tomas Mamede"
+            android:layout_gravity="center"
+
+            />
+        <TextView
+            android:id="@+id/textViewYosbi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Yosbi Alves Saenz"
+            android:layout_gravity="center"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="5">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Cashiers" />
+    </LinearLayout>
+
+</LinearLayout>
+
