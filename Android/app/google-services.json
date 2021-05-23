@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "791363006189",
+    "firebase_url": "https://weightingcashierse-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "weightingcashierse",
+    "storage_bucket": "weightingcashierse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791363006189:android:c90402c2315b3ea583e6e4",
+        "android_client_info": {
+          "package_name": "com.cashierapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791363006189-645kd70la2ggu4fvjb6v5aandn4ovs4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cashierapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "791363006189-act1j47am87m04laf195in8ndeibv2tr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cashierapp",
+            "certificate_hash": "6c90af4cc3a1907ce2613e77f1e1764394c69e68"
+          }
+        },
+        {
+          "client_id": "791363006189-gp5bd6p6gu3olsibtrdabd242lndu3k0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXrM220QF1SOJ-6bd_Ont31YNMSxBhIBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791363006189-gp5bd6p6gu3olsibtrdabd242lndu3k0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
