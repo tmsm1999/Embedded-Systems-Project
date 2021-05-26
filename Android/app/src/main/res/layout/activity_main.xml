@@ -113,10 +113,11 @@
         android:layout_weight="5">
         <Button
             android:layout_gravity="center"
-            android:id="@+id/button"
+            android:id="@+id/button_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start Cashiers" />
+            android:text="Start Cashiers"
+            android:onClick="startCashiers"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,3 @@
+To be able to authenticate with firebase you must compile using the debug.keystore provided. 
+
+The easy way to do this is to copy/replace the debug.keystore into the ~/.android/ folder
