@@ -14,6 +14,13 @@ import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.time.LocalDateTime;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startCashiers(View view) {
-
-
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.GoogleBuilder().build());
 
