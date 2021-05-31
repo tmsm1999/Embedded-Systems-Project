@@ -1,25 +1,18 @@
 package com.cashierapp.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.cashierapp.Activities.CashiersActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.cashierapp.Activities.Cashier.CashiersActivity;
 import com.cashierapp.R;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.time.LocalDateTime;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-
-
 
 import java.util.Arrays;
 import java.util.List;
@@ -64,11 +57,6 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Log.e("Firebase", String.valueOf(response.getError().getErrorCode()));
                 Log.e("Firebase", response.getError().toString());
-
-                // Sign in failed. If response is null the user canceled the
-                // sign-in flow using the back button. Otherwise check
-                // response.getError().getErrorCode() and handle the error.
-                // ...
             }
         }
     }

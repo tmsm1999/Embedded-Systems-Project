@@ -10,17 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CashierNative">
         <activity
-            android:name="com.cashierapp.Activities.CashierActivity"
+            android:name="com.cashierapp.Activities.Cashier.CashierActivity"
             android:label="@string/title_activity_cashiers"
-            android:theme="@style/Theme.CashierNative.NoActionBar"></activity>
+            android:theme="@style/Theme.CashierNative.NoActionBar" />
         <activity
-            android:name="com.cashierapp.Activities.CashiersActivity"
+            android:name="com.cashierapp.Activities.Cashier.CashiersActivity"
             android:label="@string/title_activity_cashiers"
-            android:theme="@style/Theme.CashierNative.NoActionBar"></activity>
-        <activity android:name="com.cashierapp.Activities.MainActivity">
+            android:theme="@style/Theme.CashierNative.NoActionBar"/>
+        <activity
+            android:name="com.cashierapp.Activities.AboutActivity"
+            android:label="@string/title_activity_cashiers"
+            android:theme="@style/Theme.CashierNative.NoActionBar"/>
+        <activity
+            android:name="com.cashierapp.Activities.History.HistoryActivity"
+            android:label="@string/title_activity_cashiers"
+            android:theme="@style/Theme.CashierNative.NoActionBar"/>
+        <activity
+            android:name="com.cashierapp.Activities.History.HistoryDateActivity"
+            android:label="@string/title_activity_cashiers"
+            android:theme="@style/Theme.CashierNative.NoActionBar"/>
+        <activity
+            android:name="com.cashierapp.Activities.History.HistoryDetailActivity"
+            android:label="@string/title_activity_cashiers"
+            android:theme="@style/Theme.CashierNative.NoActionBar"/>
+        <activity
+            android:name="com.cashierapp.Activities.MainActivity"
+            android:theme="@style/Theme.CashierNative.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
