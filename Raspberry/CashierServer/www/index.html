@@ -7,14 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
-        <title>Cashiers Database</title>
-    
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
         <link rel="stylesheet" href="static/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="static/css/magnific-popup.css"/>
-        <link rel="stylesheet" type="text/css" href="static/slick/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="static/slick/slick-theme.css"/>
         <link rel="stylesheet" href="static/css/tooplate-style.css">
     
         <script>
@@ -43,342 +39,200 @@
     
                 <!-- Sidebar -->
                 <div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
-    
                     <button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
-    
+
                     <div class="inner">
-                        <nav id="tmMainNav" class="tm-main-nav">
-                            <ul>
-                                <li>
-                                    <a href="#intro" id="tmNavLink1" class="scrolly active" data-bg-img="fundo4.jpeg" data-page="#tm-section-1">
-                                        <i class="fas fa-home tm-nav-fa-icon"></i>
-                                        <span>Introduction</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-2" data-page-type="carousel">
-                                        <i class="fas fa-shopping-cart tm-nav-fa-icon"></i>
-                                        <span>Cashier 1</span>
-                                    </a>
-                                </li>							
-                                <li>
-                                    <a href="#company" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-3">
-                                        <i class="fas fa-shopping-cart tm-nav-fa-icon"></i>
-                                        <span>Cashier 2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#contact" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-4">
-                                        <i class="fas fa-shopping-cart tm-nav-fa-icon"></i>
-                                        <span>Cashier 3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#contact" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-4">
-                                        <i class="fas fa-shopping-cart tm-nav-fa-icon"></i>
-                                        <span>Cashier 4</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+        
+                    <!-- Splash screen -->
+                    
+                    <div class="col-md-12" > 
+                        <a id="sign-in-button" style="display: none;" class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> Log in using Google</a>
+                        <a id="sign-out-button"  style="display: none;" class="btn btn-lg btn-google btn-block text-uppercase btn-outline" href="#">Log Out</a>
+                    </div>
+
+                        <ul id="tmMainList" class="tm-main-nav">
+                            <li>
+                                <a href="#intro" id="tmNavLinkIntro" class="scrolly active" data-bg-img="fundo4.jpeg" data-page="#tm-section-intro">
+                                    <i class="fas fa-home tm-nav-fa-icon"></i>
+                                    <span>Introduction</span>
+                                </a>
+                            </li>							
+                            <li>
+                                <a href="#about" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-about">
+                                    <i class="fas fa-shopping-cart tm-nav-fa-icon"></i>
+                                    <span>About us</span>
+                                </a>
+                            </li>                    
+                        </ul>
                     </div>
                 </div>
     
-                <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+                <div id="sectionContent" class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
     
-                        <!-- section 1 -->
-                        <section id="tm-section-1" class="tm-section">
+                        <!-- Intro -->
+                        <section id="tm-section-intro" class="tm-section">
                             <div class="ml-auto">
                                 <header class="mb-4"><h1 class="tm-text-shadow">Introduction</h1></header>
-                                <p class="mb-5 tm-font-big">This page serves only to secure and see our database products!!!!
-                                    <p>Group 3:
-                                        <p>André Almeida</p>
-                                        <p>Edson Ferreira</p>
-                                        <p>Fabiana Alves</p>
-                                        <p>Tomás Mamede</p>
-                                        <p>Yosbi Saenz</p>
-                                    </p>	
+                                <p class="mb-5 tm-font-big">This page serves only to secure and see our database products!!!!	
                                 </p>
                             </div>
                         </section>
-    
-                        <!-- section 2 cashier 1 -->
-                        <section id="tm-section-2" class="tm-section tm-section-carousel">
-                            <div>
-                                <header class="mb-4"><h2 class="tm-text-shadow">Cashier 1</h2></header>		            
-                                <div class="tm-img-container">
-                                    <div class="tm-img-slider">
-                                        <p>
-                                            roducts
-                                        oajsjbss
-                                        shhdjashhdd
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                                        hibujsbdhsd
-                                        sdb
-    
-    
-                                        </p>
-                                    </div>
-                                </div>		            		          
+
+                        <!-- About us -->
+                        <section id="tm-section-about" class="tm-section tm-section-carousel">
+                            <div class="ml-auto">
+                                <header class="mb-4"><h2 class="tm-text-shadow">Group 3</h2></header>		            
+                                    <p>André Almeida</p>
+                                    <p>Edson Ferreira</p>
+                                    <p>Fabiana Alves</p>
+                                    <p>Tomás Mamede</p>
+                                    <p>Yosbi Saenz</p>	            		          
                             </div>       		          	
-                        </section>
-    
-                        <!-- section 3 cashier 2-->
-                        <section id="tm-section-3" class="tm-section tm-section-carousel">
-                            <div>
-                                <header class="mb-4"><h2 class="tm-text-shadow">Cashier 2</h2></header>		            
-                                <div class="tm-img-container">
-                                    <div class="tm-img-slider">
-                                        Products
-                                    </div>
-                                </div>		            		          
-                            </div>       		          	
-                        </section>
-    
-                        <!-- section 3 cashier 3-->
-                        <section id="tm-section-4" class="tm-section tm-section-carousel">
-                            <div>
-                                <header class="mb-4"><h2 class="tm-text-shadow">Cashier 3</h2></header>		            
-                                <div class="tm-img-container">
-                                    <div class="tm-img-slider">
-                                        Products
-                                    </div>
-                                </div>		            		          
-                            </div>       		          	
-                        </section>
-                            <!-- section 3 cashier 4-->
-                            <section id="tm-section-5" class="tm-section tm-section-carousel">
-                                <div>
-                                    <header class="mb-4"><h2 class="tm-text-shadow">Cashier 4</h2></header>		            
-                                    <div class="tm-img-container">
-                                        <div class="tm-img-slider">
-                                            Products
-                                        </div>
-                                    </div>		            		          
-                                </div>       		          	
-                            </section>				
-                    </div>	<!-- .tm-content -->							
-                    <footer class="footer-link">
-                    </footer>
+                        </section>		
+
+                        <!-- Cashiers -->
+
+
+                    </div>	<!-- .tm-content -->	
+                    <footer class="footer-link"><a href="https://moodle.up.pt/course/view.php?id=778">Sistemas Embutidos 20/21 </a></footer>
                 </div>	<!-- row -->			
             </div>
-            <div id="preload-01"></div>
-            <div id="preload-02"></div>
-            <div id="preload-03"></div>
-            <div id="preload-04"></div>
     
             <script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
             <script type="text/javascript" src="static/js/jquery.magnific-popup.min.js"></script>
             <script type="text/javascript" src="static/js/jquery.backstretch.min.js"></script>
-            <script type="text/javascript" src="static/slick/slick.min.js"></script> <!-- Slick Carousel -->
-    
+
+            <!-- The core Firebase JS SDK is always required and must be listed first. first vers 8.4.3-->
+            <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+            <!-- Your web app's Firebase configuration-->
             <script>
+                var firebaseConfig = {
+                    apiKey: "AIzaSyBHxxbaR8a0HidckGOUZDuxU3qh7SN_kws",
+                    authDomain: "weightingcashierse.firebaseapp.com",
+                    databaseURL: "https://weightingcashierse-default-rtdb.europe-west1.firebasedatabase.app",
+                    projectId: "weightingcashierse",
+                    storageBucket: "weightingcashierse.appspot.com",
+                    messagingSenderId: "791363006189",
+                    appId: "1:791363006189:web:9dfbea915bceccab83e6e4"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+            </script>
+
+            <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+
+            <script>
+                var sidebarVisible = false;
+                var currentPageID = "#tm-section-intro";
     
-            var sidebarVisible = false;
-            var currentPageID = "#tm-section-1";
-    
-            // Setup Carousel
-            function setupCarousel() {
-    
-                // If current page isn't Carousel page, don't do anything.
-                if($('#tm-section-2').css('display') == "none") {
-                }
-                else {	// If current page is Carousel page, set up the Carousel.
-    
-                    var slider = $('.tm-img-slider');
-                    var windowWidth = $(window).width();
-    
-                    if (slider.hasClass('slick-initialized')) {
-                        slider.slick('destroy');
-                    }
-    
-                    if(windowWidth < 640) {
-                        slider.slick({
-                              dots: true,
-                              infinite: false,
-                              slidesToShow: 1,
-                              slidesToScroll: 1
-                          });
-                    }
-                    else if(windowWidth < 992) {
-                        slider.slick({
-                              dots: true,
-                              infinite: false,
-                              slidesToShow: 2,
-                              slidesToScroll: 1
-                          });
-                    }
-                    else {
-                        // Slick carousel
-                          slider.slick({
-                              dots: true,
-                              infinite: false,
-                              slidesToShow: 3,
-                              slidesToScroll: 2
-                          });
-                    }
-    
-                    // Init Magnific Popup
-                    $('.tm-img-slider').magnificPopup({
-                      delegate: 'a', // child items selector, by clicking on it popup will open
-                      type: 'image',
-                      gallery: {enabled:true}
-                      // other options
-                    });
-                  }
-              }
-    
-              // Setup Nav
-              function setupNav() {
-                  // Add Event Listener to each Nav item
-                 $(".tm-main-nav a").click(function(e){
-                     e.preventDefault();
+                // Setup Nav
+                function setupNav() {
+                    // Add Event Listener to each Nav item
+                    $(".tm-main-nav a").click(function(e){
+                        e.preventDefault();
                     
                     var currentNavItem = $(this);
                     changePage(currentNavItem);
                     
-                    setupCarousel();
+
                     setupFooter();
-    
+
                     // Hide the nav on mobile
                     $("#tmSideBar").removeClass("show");
                 });	    
-              }
-    
-              function changePage(currentNavItem) {
-                  // Update Nav items
-                  $(".tm-main-nav a").removeClass("active");
-                 currentNavItem.addClass("active");
-    
+                }
+
+                function changePage(currentNavItem) {
+                    // Update Nav items
+                    $(".tm-main-nav a").removeClass("active");
+                    currentNavItem.addClass("active");
+
                 $(currentPageID).hide();
-    
+
                 // Show current page
                 currentPageID = currentNavItem.data("page");
-                $(currentPageID).fadeIn(1000);
-    
+                $(currentPageID).fadeIn(50);
+
                 // Change background image
                 var bgImg = currentNavItem.data("bgImg");
                 $.backstretch("images/" + bgImg);		    	
-              }
-    
-              // Setup Nav Toggle Button
-              function setupNavToggle() {
-    
+                }
+
+                // Setup Nav Toggle Button
+                function setupNavToggle() {
+
                 $("#tmMainNavToggle").on("click", function(){
                     $(".sidebar").toggleClass("show");
                 });
-              }
-    
-              // If there is enough room, stick the footer at the bottom of page content.
-              // If not, place it after the page content
-              function setupFooter() {
-                  
-                  var padding = 100;
-                  var footerPadding = 40;
-                  var mainContent = $("section"+currentPageID);
-                  var mainContentHeight = mainContent.outerHeight(true);
-                  var footer = $(".footer-link");
-                  var footerHeight = footer.outerHeight(true);
-                  var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
-                  var windowHeight = $(window).height();		
-    
-                  if(totalPageHeight > windowHeight){
-                      $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
-                      footer.css("bottom", footerHeight + "px");  			
-                  }
-                  else {
-                      $(".tm-content").css("margin-bottom", "0");
-                      footer.css("bottom", "20px");  				
-                  }  			
-              }
-    
-              // Everything is loaded including images.
-              $(window).on("load", function(){
-    
-                  // Render the page on modern browser only.
-                  if(renderPage) {
-                    // Remove loader
-                      $('body').addClass('loaded');
-    
-                      // Page transition
-                      var allPages = $(".tm-section");
-    
-                      // Handle click of "Continue", which changes to next page
-                      // The link contains data-nav-link attribute, which holds the nav item ID
-                      // Nav item ID is then used to access and trigger click on the corresponding nav item
-                      var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+                }
+
+                // If there is enough room, stick the footer at the bottom of page content.
+                // If not, place it after the page content
+                function setupFooter() {
                     
-                    if(linkToAnotherPage != null) {
-                        
-                        linkToAnotherPage.on("click", function(){
-                            var navItemToHighlight = linkToAnotherPage.data("navLink");
-                            $("a" + navItemToHighlight).click();
-                        });
+                    var padding = 100;
+                    var footerPadding = 40;
+                    var mainContent = $("section"+currentPageID);
+                    var mainContentHeight = mainContent.outerHeight(true);
+                    var footer = $(".footer-link");
+                    var footerHeight = footer.outerHeight(true);
+                    var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+                    var windowHeight = $(window).height();		
+
+                    if(totalPageHeight > windowHeight){
+                        $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+                        footer.css("bottom", footerHeight + "px");  			
                     }
-                      
-                      // Hide all pages
-                      allPages.hide();
-    
-                      $("#tm-section-1").fadeIn();
-    
-                     // Set up background first page
-                     var bgImg = $("#tmNavLink1").data("bgImg");
-                     
-                     $.backstretch("images/" + bgImg, {fade: 500});
-    
-                     // Setup Carousel, Nav, and Nav Toggle
-                    setupCarousel();
+                    else {
+                        $(".tm-content").css("margin-bottom", "0");
+                        footer.css("bottom", "20px");  				
+                    }  			
+                }
+
+
+                function setupAuth(){
+                    if(firebase.auth().currentUser == null){
+                        $("#sign-in-button").fadeIn(250);
+                        $("#sign-out-button").hide();
+                    }else{
+                        $("#sign-out-button").fadeIn(250);
+                        $("#sign-in-button").hide();
+                    }
+                }
+
+                // Everything is loaded including images.
+                $(window).on("load", function(){
+
+                    // Render the page on modern browser only.
+                    if(renderPage) {
+                        // Remove loader
+                        $('body').addClass('loaded');
+                    }
+                    // Page transition
+                    var allPages = $(".tm-section");
+                    
+                    // Hide all pages
+                    allPages.hide();
+                    
+                    $("#tm-section-intro").fadeIn(250);
+                    
+                    // Set up background first page
+                    var bgImg = $("#tmNavLinkIntro").data("bgImg");
+                    
+                    $.backstretch("images/" + bgImg, {fade: 250});
+
+                    // Setup Nav, Nav Toggle and Footer
+
                     setupNav();
                     setupNavToggle();
-                    setupFooter();
-    
-                    // Resize Carousel upon window resize
-                    $(window).resize(function() {
-                        setupCarousel();
-                        setupFooter();
-                    });
-                  }	      	
-            });
-    
+                    setupFooter(); 
+                    setupAuth();     	
+                });
+
             </script>
 
         <script src="static/js/script.js"></script>
-        
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
-
-        <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBHxxbaR8a0HidckGOUZDuxU3qh7SN_kws",
-            authDomain: "weightingcashierse.firebaseapp.com",
-            databaseURL: "https://weightingcashierse-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "weightingcashierse",
-            storageBucket: "weightingcashierse.appspot.com",
-            messagingSenderId: "791363006189",
-            appId: "1:791363006189:web:9dfbea915bceccab83e6e4"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        </script>
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
     </body>
 </html>
