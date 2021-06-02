@@ -1,7 +1,6 @@
 // Shortcuts to DOM Elements.
 var sideBarList = document.getElementById('tmMainList');
 
-var splashPage = document.getElementById('authPage');
 var signInButton = document.getElementById('sign-in-button');
 var signOutButton = document.getElementById('sign-out-button');
 
@@ -77,23 +76,47 @@ function createCashierNavEntry(cashierID) {
     sideBarList.append(li);
   };
   setupNav();
+  console.log('NavCashier '+cashierID+" done.");  
 }
 
  /**
   * Creates a product element.
   */
-function createProductElement(product, weight) {
-  var html =
-      '<div class="product product-' + product + ' mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-grid mdl-grid--no-spacing">' +
-        '<div class="mdl-card mdl-shadow--2dp">' +
-          '<div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">' +
-            '<h4 class="mdl-card__title-text"></h4>' +
-          '</div>' +
-          '<div class="text">'+weight+' kg</div>' +
-        '</div>' +
-      '</div>';
+function createProductElements(cashierID,product) {
+      // Listen for the products.
+      var productsRef = cashierDatabase.ref('Cashiers/' + cashierID);
+      productsRef.on('value', function(productSnapshot){
+        productSnapshot.forEach(function(childSnapshot){
+          if(document.getElementById("products"+cashierID).getElementsByClassName("product-"+childSnapshot.key).length == 0){
+            var html =
+            '<div class="product product-' + childSnapshot.key + ' mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-grid mdl-grid--no-spacing">' +
+              '<div class="mdl-card mdl-shadow--2dp">' +
+                '<div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">' +
+                  '<h4 class="mdl-card__title-text">'+childSnapshot.key+'</h4>' +
+                '<div id="cash'+cashierID+'-'+childSnapshot.key+'" class="text">'+childSnapshot.val()+' Kg</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
 
-  return html
+            console.log('Product:'+childSnapshot.key);
+            console.log('Weight:'+childSnapshot.val());
+
+            var div = document.createElement('div');
+            
+            div.innerHTML = html;
+
+            document.getElementById("products"+cashierID).append(div);
+
+            console.log('Product '+childSnapshot.key+" added."); 
+          } 
+        });
+      });
+    
+      
+      // Keep track of all Firebase reference on which we are listening.
+      listeningFirebaseRefs.push(productsRef);
+
+      //archive.onclick = onArchiveClicked;
 }
 
  
@@ -107,7 +130,9 @@ function createProductElement(product, weight) {
             '<!-- Cashier '+cashierID+' -->'+
                 '<div class="ml-auto">'+
                     '<header class="mb-4"><h1 class="tm-text-shadow">Cashier '+cashierID+'</h1></header>'+
-                      '<div class="products material-icons">Products</div>' +
+                      '<div id="products'+cashierID+'" class="material material-icons">'+
+                        '<h2>Products</h2>'+
+                      '</div>'+
                 '</div>';
 
           
@@ -123,18 +148,12 @@ function createProductElement(product, weight) {
       
       //Append new cashier info
       document.getElementById('sectionContent').appendChild(section);
-      
-      // Listen for the products.
-      var productsRef = cashierDatabase.ref('Cashiers/' + cashierID);
-      productsRef.on('value', function(product,weight) {
-        createProductElement(product, weight);
-      });
-    
-      // Keep track of all Firebase reference on which we are listening.
-      listeningFirebaseRefs.push(productsRef);
+      console.log('ElementCashier '+cashierID+" done.");
 
-      //archive.onclick = onArchiveClicked;
-    }
+      cashierDatabase.ref('Cashiers/'+cashierID).once('value', (snapshot) => {
+          createProductElements(cashierID,snapshot.key)
+      });
+    };
   }
   
 
@@ -142,16 +161,19 @@ function createProductElement(product, weight) {
   * Gets a list of products of a Cashier from the Firebase DB.
   */
   function getCashierList() {
-    cashierDatabase.ref('Cashiers').once('value', (snapshot) => {
+    var cashierRef = cashierDatabase.ref('Cashiers');
+    cashierRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         var childKey = childSnapshot.key;
         if (sideBarList.getElementsByClassName('scrolly').namedItem('tmNavCashier'+childKey) == null ){
-          console.log(childKey);
           createCashierNavEntry(childKey);
-          createCashierElement(childKey);   
-          console.log("Done");
+          createCashierElement(childKey); 
+          console.log('Complete cashier '+childKey+" done.");  
         }
       });
+
+      // Keep track of all Firebase reference on which we are listening.
+      listeningFirebaseRefs.push(cashierRef);
     });
   };
 
