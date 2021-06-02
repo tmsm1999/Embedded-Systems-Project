@@ -76,7 +76,6 @@ function createCashierNavEntry(cashierID) {
     sideBarList.append(li);
   };
   setupNav();
-  console.log('NavCashier '+cashierID+" done.");  
 }
 
  /**
@@ -98,16 +97,11 @@ function createProductElements(cashierID,product) {
               '</div>' +
             '</div>';
 
-            console.log('Product:'+childSnapshot.key);
-            console.log('Weight:'+childSnapshot.val());
-
             var div = document.createElement('div');
             
             div.innerHTML = html;
 
             document.getElementById("products"+cashierID).append(div);
-
-            console.log('Product '+childSnapshot.key+" added."); 
           } 
         });
       });
@@ -148,7 +142,6 @@ function createProductElements(cashierID,product) {
       
       //Append new cashier info
       document.getElementById('sectionContent').appendChild(section);
-      console.log('ElementCashier '+cashierID+" done.");
 
       cashierDatabase.ref('Cashiers/'+cashierID).once('value', (snapshot) => {
           createProductElements(cashierID,snapshot.key)
@@ -168,7 +161,6 @@ function createProductElements(cashierID,product) {
         if (sideBarList.getElementsByClassName('scrolly').namedItem('tmNavCashier'+childKey) == null ){
           createCashierNavEntry(childKey);
           createCashierElement(childKey); 
-          console.log('Complete cashier '+childKey+" done.");  
         }
       });
 
@@ -181,7 +173,6 @@ function createProductElements(cashierID,product) {
 window.addEventListener('load', function() {
   
   // Bind Sign in button.
-  console.log("addEventListener");
   signInButton.addEventListener('click', function() {
     console.log("trying login");
 

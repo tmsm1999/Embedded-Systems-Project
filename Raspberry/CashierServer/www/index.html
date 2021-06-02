@@ -59,8 +59,14 @@
                             </li>							
                             <li>
                                 <a href="#about" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-about">
-                                    <i class="fas fa-shopping-cart tm-nav-fa-icon"></i>
+                                    <i class="fas fa-question tm-nav-fa-icon"></i>
                                     <span>About us</span>
+                                </a>
+                            </li>                             
+                            <li>
+                                <a href="#history" id="tmMainListHistory" class="scrolly" data-bg-img="fundo4.jpeg" data-page="#tm-section-history">
+                                    <i class="fas fa-list tm-nav-fa-icon"></i>
+                                    <span>Cashiers History</span>
                                 </a>
                             </li>                    
                         </ul>
@@ -79,7 +85,7 @@
                         </section>
 
                         <!-- About us -->
-                        <section id="tm-section-about" class="tm-section tm-section-carousel">
+                        <section id="tm-section-about" class="tm-section">
                             <div class="ml-auto">
                                 <header class="mb-4"><h2 class="tm-text-shadow">Group 3</h2></header>		            
                                     <p>André Almeida</p>
@@ -87,6 +93,13 @@
                                     <p>Fabiana Alves</p>
                                     <p>Tomás Mamede</p>
                                     <p>Yosbi Saenz</p>	            		          
+                            </div>       		          	
+                        </section>		
+
+                        <!-- Cashiers History -->
+                        <section id="tm-section-history" class="tm-section" style="display: none;">
+                            <div class="ml-auto">
+                                <header class="mb-4"><h2 class="tm-text-shadow">Cashiers History</h2></header>		                        		          
                             </div>       		          	
                         </section>		
 
@@ -196,8 +209,10 @@
                     if(firebase.auth().currentUser == null){
                         $("#sign-in-button").fadeIn(250);
                         $("#sign-out-button").hide();
+                        $("#tmMainListHistory").hide();
                     }else{
                         $("#sign-out-button").fadeIn(250);
+                        $("#tmMainListHistory").fadeIn(250);
                         $("#sign-in-button").hide();
                     }
                 }
