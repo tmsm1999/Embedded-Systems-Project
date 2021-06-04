@@ -19,18 +19,6 @@ class CashierServer:
             content = file.read()
             return content
 
-    @cherrypy.expose
-    def detail(self):
-        with open(os.path.join('www', 'detail_scale.html'), 'r') as file:
-            content = file.read()
-            return content
-
-    @cherrypy.expose
-    def about(self):
-        with open(os.path.join('www', 'about.html'), 'r') as file:
-            content = file.read()
-            return content
-
 
 if __name__ == '__main__':
 
