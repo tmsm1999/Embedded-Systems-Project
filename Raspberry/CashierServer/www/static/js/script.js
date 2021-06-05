@@ -86,23 +86,26 @@ function createProductElements(cashierID,product) {
       var productsRef = cashierDatabase.ref('Cashiers/' + cashierID);
       productsRef.on('value', function(productSnapshot){
         productSnapshot.forEach(function(childSnapshot){
-          if(document.getElementById("products"+cashierID).getElementsByClassName("product-"+childSnapshot.key).length == 0){
-            var html =
-            '<div class="product product-' + childSnapshot.key + ' mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-grid mdl-grid--no-spacing">' +
-              '<div class="mdl-card mdl-shadow--2dp">' +
-                '<div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">' +
-                  '<h4 class="mdl-card__title-text">'+childSnapshot.key+'</h4>' +
-                '<div id="cash'+cashierID+'-'+childSnapshot.key+'" class="text">'+childSnapshot.val()+' Kg</div>' +
+          console.log("hagla");
+          if (childSnapshot.val() != "null") {
+            if(document.getElementById("products"+cashierID).getElementsByClassName("product-"+childSnapshot.key).length == 0){
+              var html =
+              '<div class="product product-' + childSnapshot.key + ' mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-grid mdl-grid--no-spacing">' +
+                '<div class="mdl-card mdl-shadow--2dp">' +
+                  '<div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">' +
+                    '<h4 class="mdl-card__title-text">'+childSnapshot.key+'</h4>' +
+                  '<div id="cash'+cashierID+'-'+childSnapshot.key+'" class="text">'+childSnapshot.val()+' Kg</div>' +
+                  '</div>' +
                 '</div>' +
-              '</div>' +
-            '</div>';
+              '</div>';
 
-            var div = document.createElement('div');
-            
-            div.innerHTML = html;
+              var div = document.createElement('div');
+              
+              div.innerHTML = html;
 
-            document.getElementById("products"+cashierID).append(div);
-          } 
+              document.getElementById("products"+cashierID).append(div);
+            } 
+          }
         });
       });
     
