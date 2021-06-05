@@ -70,3 +70,50 @@ In the **Cashiers** screen you are presented with the list of the cashiers avail
 
 On the other hand, in the **History** screen. Click the cashier you want to check the History for and select the date and time to see the set of items read for that period in time.
 
+## Getting started with the Raspberry Pi
+
+### Prerequisites
+
+* Paste the folder CashierServer into */home/pi* of the Raspberry Pi
+* Open Terminal
+* cd CashierServer
+* chmod 777 -R scripts
+* sed -i -e 's/\r$//' *.*
+* ./scripts/install.sh
+
+### How to run the service
+
+* Open the terminal and type: ./CashierServer/scripts/start.sh
+* Open your favortie Web Browser and access your local IP address on port: **8080**. For example: 192.168.1.127:8080
+* To see the contents of the page you must login with a Google account. **However, this only works if your Google account is on the list of authorized domains**
+
+### Communication Protocols:
+
+For the Realtime cashier and history we directly used the Firebase Realtime Database SDK. Here we used a query linked with a listener for all the chamnges that comes form the cashier.
+
+We used Cherrypy which is a web server serving as general station. We enableded a REST service for the communication of the Android app.
+
+### How to use the app
+
+First click the **LOG IN USING GOOGLE** button to authenticate with Firebase Realtime database.
+
+<p align="center">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/Login raspberry.png/" width="700">
+</p>
+
+After this first step you have access to the information in the databse and the cashier history.
+
+<p align="center">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history.png/" width="700">
+</p>
+
+By clicking in **History** you have access to the content of the cashiers by date and time. Clicking on any date you can observe the products that where read on the selected day.
+
+<p align="center">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 2.png/" hspace=25 width="500">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="200">
+</p>
+
+
+
+
