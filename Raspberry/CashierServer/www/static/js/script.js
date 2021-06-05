@@ -109,6 +109,7 @@ function createCashierNavEntry(cashierID) {
   setupNav();
 }
 
+
 /**
 * Creates a product element.
 */
