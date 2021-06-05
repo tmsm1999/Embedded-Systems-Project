@@ -173,13 +173,15 @@ function createHistoryPage(cashierID) {
         }
         
         HistorySnapshot.forEach(function(productData){
-          if(document.getElementById(cashierID+HistorySnapshot.key+productData.key) != null){
-            document.getElementById(cashierID+HistorySnapshot.key+productData.key).outerHTML = "";
+          if (productData.val() != "null") {
+            if(document.getElementById(cashierID+HistorySnapshot.key+productData.key) != null){
+              document.getElementById(cashierID+HistorySnapshot.key+productData.key).outerHTML = "";
+            }
+            var divProduct = document.createElement('div');
+            var htmlProduct = '<div id="'+cashierID+HistorySnapshot.key+productData.key+'" style="font-weight: normal;" class="tm-text-shadow"><p>'+productData.key+' : '+productData.val()+' Kg</p></div>';
+            divProduct.innerHTML = htmlProduct;
+            document.getElementById("history"+HistorySnapshot.key).append(divProduct);
           }
-          var divProduct = document.createElement('div');
-          var htmlProduct = '<div id="'+cashierID+HistorySnapshot.key+productData.key+'" style="font-weight: normal;" class="tm-text-shadow"><p>'+productData.key+' : '+productData.val()+' Kg</p></div>';
-          divProduct.innerHTML = htmlProduct;
-          document.getElementById("history"+HistorySnapshot.key).append(divProduct);
         });
       });
     });
