@@ -140,6 +140,9 @@ public class HistoryDetailActivity extends AppCompatActivity {
         public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
             Log.d("onChildAdded", "previous child " + previousChildName);
 
+            if (dataSnapshot.getValue().toString().equals("null"))
+                return;
+
             Cashier c = new Cashier(dataSnapshot.getKey(), dataSnapshot.getValue().toString());
             mAdapter.addData(c);
 
@@ -154,6 +157,9 @@ public class HistoryDetailActivity extends AppCompatActivity {
         @Override
         public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
             Log.d("onChildChanged", "previous child " + previousChildName);
+            if (dataSnapshot.getValue().toString().equals("null"))
+                return;
+
             Cashier c = new Cashier(dataSnapshot.getKey(), dataSnapshot.getValue().toString());
             mAdapter.changeData(c);
 
@@ -168,6 +174,9 @@ public class HistoryDetailActivity extends AppCompatActivity {
         @Override
         public void onChildRemoved(DataSnapshot dataSnapshot) {
             Log.d("onChildRemoved", "child removed");
+
+            if (dataSnapshot.getValue().toString().equals("null"))
+                return;
 
             Cashier c = new Cashier(dataSnapshot.getKey(), dataSnapshot.getValue().toString());
             mAdapter.removeData(c);
