@@ -56,7 +56,7 @@ On the entry screen you must press the **Start Cashiers** button and go through 
 
 By clicking the *Humburger icon* button on the top-left corner of the screen you are shown the app menu. From here you can get to the Cashiers, History or About screens.
 
-<img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/android_start_screen.png/" lign="right" width="200">
+<img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/android_start_screen.png/" align="right" width="200">
 
 In the **Cashiers** screen you are presented with the list of the cashiers available. By clicking on each cashier you have real-time access to the items that cashier has read. When you finish weighting the items in the cashier, you can pres the **Restart Cashier** button to send those items to **History** and start weighting a new set of items.
 
