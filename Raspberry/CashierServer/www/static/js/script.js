@@ -86,7 +86,6 @@ function createProductElements(cashierID,product) {
       var productsRef = cashierDatabase.ref('Cashiers/' + cashierID);
       productsRef.on('value', function(productSnapshot){
         productSnapshot.forEach(function(childSnapshot){
-          console.log("hagla");
           if (childSnapshot.val() != "null") {
             if(document.getElementById("products"+cashierID).getElementsByClassName("product-"+childSnapshot.key).length == 0){
               var html =
