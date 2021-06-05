@@ -1,6 +1,6 @@
 # Weighting Cashier - Project Wiki
 
-##About this Project
+## About this Project
 
 Integrated in the Embedded Systems course the goal of this project is to study, architect and develop a system capable of simulating a supermarket like cashier, that can weigh objects identified by a unique Radio-Frequency identification tag (RFID).
 
@@ -10,7 +10,7 @@ In practice, the system will read the tag from the product while weigbing it. Th
 
 This project helped the group develop a whole new set of skills and apply Computer Science knowledge to the development of Embedded systems.
 
-##Project Timeline
+## Project Timeline
 
 We started the project by preparing the GitHub repository where the code would be uploaded and changed as went made progress. By using a version control system we got the desired flexibility to really work as a group, where everyone was free to make suggestions, change things and get feedback of the colleagues.
 
@@ -28,4 +28,35 @@ However, there was a major delay with the Arduino module due to the unavailablit
 
 On the other hand, on the Android app and Raspberry Pi sides there were no major delays and every task was performed on schedule.
 
+
+## Getting started with the Android app
+
+### Prerequisites
+
+* Install Android Studio
+* Install git version control software
+* Clone the code from this repository
+* Have with you an Android phone or activate the emulation software
+* Have access to Google's Firebase
+
+### How to run the app
+
+* To be able to authenticate with Firebase you must compile the project using the *debug.keystore* provided. The easiest way to do this it to copy and replace the debug.keystore into the **~/.android/folder**
+* Open the project with Android Studio
+* Run the app or build the APK and install
+
+### Communication Protocols
+
+* For the realtime cashier system and history we used directly the Firebase Realtime databse standard SDK. Here we used a query linked with a listener for all the changes that comes fro the cashier
+* For the *Restart Cashier* button, we used a REST endpoing in the Raspberry Pi, where we sent a requent wirh the ID of the cashier to be restarted
+
+### How to use the app
+
+On the entry screen you must press the **Start Cashiers** button and go through the Google login to authenticate in the system.
+
+By clicking the *Humburger icon* button on the top-left corner of the screen you are shown the app menu. From here you can get to the Cashiers, History or About screens.
+
+In the **Cashiers** screen you are presented with the list of the cashiers available. By clicking on each cashier you have real-time access to the items that cashier has read. When you finish weighting the items in the cashier, you can pres the **Restart Cashier** button to send those items to **History** and start weighting a new set of items.
+
+On the other hand, in the **History** screen. Click the cashier you want to check the History for and select the date and time to see the set of items read for that period in time.
 
