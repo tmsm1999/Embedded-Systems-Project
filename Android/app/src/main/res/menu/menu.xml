@@ -6,7 +6,7 @@
         android:id="@+id/menu_cashiers">
     </item>
     <item
-        android:title="Historic"
+        android:title="History"
         android:icon="@drawable/ic_history"
         android:id="@+id/menu_history">
 

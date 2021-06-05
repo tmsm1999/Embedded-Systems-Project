@@ -52,7 +52,7 @@ public class HistoryDateActivity extends AppCompatActivity {
         Intent intent = getIntent();
         mCashierID = intent.getStringExtra(HistoryActivity.MESSAGE);
 
-        InitToolbar("Historic");
+        InitToolbar("History");
         InitVars();
     }
 

@@ -42,7 +42,7 @@ public class HistoryActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        InitToolbar("Historic");
+        InitToolbar("History");
         InitVars();
     }
 

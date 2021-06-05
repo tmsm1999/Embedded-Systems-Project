@@ -56,7 +56,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
         int gmtpos = strTime.indexOf('G');
         mStrDate = strTime.substring(0, gmtpos);
 
-        InitToolbar("Historic");
+        InitToolbar("History");
 
         InitVars();
     }
