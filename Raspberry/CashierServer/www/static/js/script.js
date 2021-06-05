@@ -117,25 +117,25 @@ function createProductElements(cashierID) {
   var productsRef = cashierDatabase.ref('Cashiers/' + cashierID);
   productsRef.on('value', function(productSnapshot){
     productSnapshot.forEach(function(childSnapshot){
-      if(document.getElementById("products"+cashierID).getElementsByClassName("product-"+childSnapshot.key).length == 0){
-        var html =
-        '<div class="product'+cashierID+' product-' + childSnapshot.key + '">' +
-          '<h4 class="tm-text-shadow" style="font-weight: normal;">'+childSnapshot.key+' : '+childSnapshot.val()+' Kg</div></h4>' +
-        '</div>';
+      if (childSnapshot.val() != "null") {
+        if(document.getElementById("products"+cashierID).getElementsByClassName("product-"+childSnapshot.key).length == 0){
+          var html =
+          '<div class="product'+cashierID+' product-' + childSnapshot.key + '">' +
+            '<h4 class="tm-text-shadow" style="font-weight: normal;">'+childSnapshot.key+' : '+childSnapshot.val()+' Kg</div></h4>' +
+          '</div>';
 
-        var div = document.createElement('div');
-        
-        div.innerHTML = html;
+          var div = document.createElement('div');
+          
+          div.innerHTML = html;
 
-        document.getElementById("products"+cashierID).append(div);
+          document.getElementById("products"+cashierID).append(div);
+        }
       } 
     });
   });
       
   // Keep track of all Firebase reference on which we are listening.
   listeningFirebaseRefs.push(productsRef);
-
-  //archive.onclick = onArchiveClicked();
 }
 
 /**
@@ -182,16 +182,6 @@ function createHistoryPage(cashierID) {
           document.getElementById("history"+HistorySnapshot.key).append(divProduct);
         });
       });
-
-      /*
-      $(".accordion").click(
-        function(){
-          if($(this).next().is(':visible')){
-            $(this).next(".panel").hide();
-          }else{
-            $(this).next(".panel").show();
-          }});
-      */
     });
       
   // Keep track of all Firebase reference on which we are listening.
@@ -229,13 +219,15 @@ function archiveCashierList(cashierID) {
 
   cashierRef.once('value', (snapshot) => {
     var data = snapshot.val();
-
-    cashierHistoryRef.child(now).set(data)
-    cashierRef.remove();
-    cashierRef.set("No data")
-    $(".product"+cashierID).remove()
+    if(data == "null"){
+      $(".product"+cashierID).remove();
+    }else{
+      cashierHistoryRef.child(now).set(data);
+      cashierRef.remove();
+      cashierRef.set({null:"null"});
+      $(".product"+cashierID).remove();
+    }
   })
-
 };
 
 // Bindings on load.
