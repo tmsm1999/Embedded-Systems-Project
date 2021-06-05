@@ -111,7 +111,7 @@ By clicking in **History** you have access to the content of the cashiers by dat
 
 <p align="center">
   <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 2.png/" hspace=75 width="500">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="300">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="200">
 </p>
 
 
