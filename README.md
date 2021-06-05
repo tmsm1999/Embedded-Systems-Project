@@ -98,20 +98,20 @@ We used Cherrypy which is a web server serving as general station. We enableded 
 First click the **LOG IN USING GOOGLE** button to authenticate with Firebase Realtime database.
 
 <p align="center">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/Login raspberry.png/" width="400">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/Login raspberry.png/" width="800">
 </p>
 
 After this first step you have access to the information in the databse and the cashier history.
 
 <p align="center">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history.png/" width="400">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history.png/" width="800">
 </p>
 
 By clicking in **History** you have access to the content of the cashiers by date and time. Clicking on any date you can observe the products that where read on the selected day.
 
 <p align="center">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 2.png/" hspace=75 width="300">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="100">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 2.png/" hspace=75 width="600">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="300">
 </p>
 
 
