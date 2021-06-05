@@ -110,7 +110,7 @@ After this first step you have access to the information in the databse and the 
 By clicking in **History** you have access to the content of the cashiers by date and time. Clicking on any date you can observe the products that where read on the selected day.
 
 <p align="center">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 2.png/" hspace=75 width="500">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 2.png/" hspace=25 width="500">
   <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="200">
 </p>
 
