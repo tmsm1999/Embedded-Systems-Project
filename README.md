@@ -16,7 +16,7 @@ We started the project by preparing the GitHub repository where the code would b
 
 As the semester when by we tried to guide ourselves as much as we could by our Gantt diagram. It showed us what we had purposed ourselves to in the last five weeks of the semester as the dealine to deliver the project drew near. 
 
---> Imagem Diagram de Gantt.
+![picture alt](https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/Gantt.png/200x150 "Gantt Diagram")
 
 As a quickstart to the whole development effort we configured the Google Firebase Real-time database. By using Firebase we were not required to be physically together to be able to test the system as a whole. This was a great help because we were not always available to go to the faculty. The Firebase configuration went by smoothly. However we had to troubleshoot some problems as they appeared. With each others supoort and with the help of the Professors we were able to correctly configure Firebase.
 
