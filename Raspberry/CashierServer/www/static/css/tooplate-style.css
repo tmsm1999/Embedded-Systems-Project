@@ -1,20 +1,15 @@
 
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	font-weight: 300;
+	font-weight: 400;
     color: white;
 	overflow-x: hidden;
     min-height: 100vh;
     height: 100%;
     position: relative;
     background: #222222;
+    caret-color: transparent;
 }
-
-#preload-01 { background: url(../../images/constructive_bg_01.jpg) no-repeat -9999px -9999px; }
-#preload-02 { background: url(../../images/simpsons1.jpg) no-repeat -9999px -9999px; }
-#preload-03 { background: url(../../images/constructive_bg_03.jpg) no-repeat -9999px -9999px; }
-#preload-04 { background: url(../../images/constructive_bg_04.jpg) no-repeat -9999px -9999px; }
 
 ul { margin: 0; padding: 0; }
 
@@ -65,7 +60,7 @@ p:last-child { margin-bottom: 0; }
     height: 100px;
 }
 
-.tm-font-big { font-size: 1.3rem; }
+.tm-font-big { font-size: 1.4rem; }
 
 .row {
 	display: -ms-flexbox;
@@ -179,7 +174,7 @@ p:last-child { margin-bottom: 0; }
 
 .tm-btn {
     padding: 15px 50px;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 300;
     background: transparent;
     border-color: white;
@@ -203,7 +198,7 @@ p:last-child { margin-bottom: 0; }
 .slick-dots li button:before { font-size: 20px; }
 .slick-slide { margin: 0 10px; }
 .slick-list { margin: 0 -10px; }
-.tm-text-shadow { text-shadow: 0px 3px 2px rgba(50, 50, 50, 1); }
+.tm-text-shadow { text-shadow: 0px 3px 2px rgba(50, 50, 50, 1); font-weight: bold;}
 
 .tm-section {
     max-width: 100%;
@@ -322,10 +317,6 @@ footer a { color: white; }
 }
 
 @media (max-width: 991px) {    
-
-    /*  Nav toggle
-        https://www.youtube.com/watch?v=uyT3NSHhke8
-    */
 
     .tm-main-row { position: relative; }
 

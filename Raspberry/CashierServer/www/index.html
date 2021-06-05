@@ -10,9 +10,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
         <link rel="stylesheet" href="static/css/fontawesome-all.min.css">
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="static/css/magnific-popup.css"/>
         <link rel="stylesheet" href="static/css/tooplate-style.css">
-    
+
         <script>
             var renderPage = true;
     
@@ -24,7 +23,6 @@
         }
         </script>
     </head>
-    
     <body>
         <!-- Loader -->
         <div id="loader-wrapper">
@@ -76,7 +74,7 @@
                 <div id="sectionContent" class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
     
                         <!-- Intro -->
-                        <section id="tm-section-intro" class="tm-section">
+                        <section id="tm-section-intro" class="tm-section" style="text-align:center; margin:auto">
                             <div class="ml-auto">
                                 <header class="mb-4"><h1 class="tm-text-shadow">Introduction</h1></header>
                                 <p class="mb-5 tm-font-big">This page serves only to secure and see our database products!!!!	
@@ -85,9 +83,9 @@
                         </section>
 
                         <!-- About us -->
-                        <section id="tm-section-about" class="tm-section">
+                        <section id="tm-section-about" class="tm-section" style="text-align:center; margin:auto">
                             <div class="ml-auto">
-                                <header class="mb-4"><h2 class="tm-text-shadow">Group 3</h2></header>		            
+                                <header class="mb-4"><h1 class="tm-text-shadow">Group 3</h1></header>		            
                                     <p>André Almeida</p>
                                     <p>Edson Ferreira</p>
                                     <p>Fabiana Alves</p>
@@ -97,10 +95,10 @@
                         </section>		
 
                         <!-- Cashiers History -->
-                        <section id="tm-section-history" class="tm-section" style="display: none;">
-                            <div class="ml-auto">
-                                <header class="mb-4"><h2 class="tm-text-shadow">Cashiers History</h2></header>		                        		          
-                            </div>       		          	
+                        <section id="tm-section-history" class="tm-section" style=" text-align: center; margin: auto; display: none;">
+                                <header class="mb-4"><h1 style="font-weight: bold;" class="tm-text-shadow">Cashiers History</h1></header>
+                                <table id="historyTab" style="margin: auto;">
+                                </table>		                        		          
                         </section>		
 
                         <!-- Cashiers -->
@@ -192,18 +190,8 @@
                     var footer = $(".footer-link");
                     var footerHeight = footer.outerHeight(true);
                     var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
-                    var windowHeight = $(window).height();		
-
-                    if(totalPageHeight > windowHeight){
-                        $(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
-                        footer.css("bottom", footerHeight + "px");  			
-                    }
-                    else {
-                        $(".tm-content").css("margin-bottom", "0");
-                        footer.css("bottom", "20px");  				
-                    }  			
+                    var windowHeight = $(window).height();				
                 }
-
 
                 function setupAuth(){
                     if(firebase.auth().currentUser == null){
@@ -243,9 +231,8 @@
                     setupNav();
                     setupNavToggle();
                     setupFooter(); 
-                    setupAuth();     	
+                    setupAuth();
                 });
-
             </script>
 
         <script src="static/js/script.js"></script>
