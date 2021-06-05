@@ -31,7 +31,7 @@ cd ${APP_HOME}
 
 # starting server
 echo "starting server on http://192.168.192.1:3080/"
-nohup python ${APP_HOME}/CashierServer.py > /dev/null 2>&1 &
+nohup python3 ${APP_HOME}/CashierServer.py > /dev/null 2>&1 &
 
 # Check if app is running
 PID=$( get_app_pid ${APP_NAME} )

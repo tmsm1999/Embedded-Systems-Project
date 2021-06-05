@@ -5,5 +5,6 @@
 #
 # install cherrypy
 echo "installing cherrypy"
-sudo python -m pip install cherrypy
+sudo python -m pip3 install cherrypy
+sudo python -m pip3 install pyrebase
 
