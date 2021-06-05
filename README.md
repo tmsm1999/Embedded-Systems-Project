@@ -57,7 +57,7 @@ On the entry screen you must press the **Start Cashiers** button and go through 
 By clicking the *Humburger icon* button on the top-left corner of the screen you are shown the app menu. From here you can get to the Cashiers, History or About screens.
 
 <p align="center">
-  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/android_start_screen.png/" width="200">
+  <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/android_start_screen.png/" hspace=50 width="200">
   <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/android_menu.png/" width="200">
 </p>
 
