@@ -5,7 +5,7 @@
 #
 # install cherrypy
 echo "installing cherrypy"
-sudo python3 -m pip3 install cherrypy
-sudo python3 -m pip3 install pyrebase
-sudo python3 -m pip3 install schedule
+sudo pip3 install cherrypy
+sudo pip3 install pyrebase
+sudo pip3 install schedule
 
