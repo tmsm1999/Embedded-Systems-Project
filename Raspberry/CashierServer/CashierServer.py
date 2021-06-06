@@ -18,15 +18,53 @@ class ConfigNotValidException(Exception):
     pass
 
 class CashierServer:
-
     @cherrypy.expose
     def index(self):
         with open(os.path.join('www', 'index.html'), 'r') as file:
             content = file.read()
             return content
             
+
+#tentei por por 2 parametros mas pelo link estava constantemente a dizer que faltava o segundo parametro
     @cherrypy.expose
-    
+    def putdata(self, data):
+        answer = {'state': 'ok'}
+        cherrypy.log(data)
+
+        # configuration object
+        firebaseConfig = {
+            "apiKey": "AIzaSyBHxxbaR8a0HidckGOUZDuxU3qh7SN_kws",
+            "authDomain": "weightingcashierse.firebaseapp.com",
+            "databaseURL": "https://weightingcashierse-default-rtdb.europe-west1.firebasedatabase.app",
+            "projectId": "weightingcashierse",
+            "storageBucket": "weightingcashierse.appspot.com",
+            "messagingSenderId": "791363006189",
+            "appId": "1:791363006189:web:9dfbea915bceccab83e6e4"
+        }
+
+        # firebase connection
+        firebase = pyrebase.initialize_app(firebaseConfig)
+
+        # firebase database
+        db = firebase.database()
+
+        # Cahiers
+#necessário melhorar
+        cashier = data.cashier
+
+        cash = db.child("Cashiers").child(cashier).get()
+        chashjson = cash.val()
+        chashjson.update(data.data)
+
+        result = db.child("Cashiers").child(cashier).set(chashjson)
+        
+        cherrypy.response.headers['Cache-Control'] = 'no-cache, no-store'
+        cherrypy.response.headers['Pragma'] = 'no-cache'
+        cherrypy.response.headers['Content-Type'] = 'application/json'
+        return json.dumps(answer).encode('utf-8')
+
+
+    @cherrypy.expose
     def movetohistory(self, cashier):
         answer = {'state': 'ok'}
         cherrypy.log(cashier)
@@ -47,28 +85,27 @@ class CashierServer:
 
         # firebase database
         db = firebase.database()
+
         # Cahiers
         cash = db.child("Cashiers").child(cashier).get()
 
         # getting unixtime
         d = datetime.utcnow()
         unixtime = calendar.timegm(d.utctimetuple())
-
+        
         data = {
             unixtime: cash.val()
-            
         }
 
-        # History
-        history = db.child("History").child(cashier).get()
-        historyjson = history.val()
-        historyjson.update(data)
-
-        #y = json.dumps(jsonload)
-        #cherrypy.log(y)
-
-        result = db.child("History").child(cashier).set(historyjson)
-        result = db.child("Cashiers").child(cashier).set(json.loads('{"null": "null"}'))
+#Não consigo saber o que cash.val() tem
+        if(cash.val() != '{"null": "null"}' ):
+            # History
+            history = db.child("History").child(cashier).get()
+            historyjson = history.val()
+            historyjson.update(data)
+            
+            result = db.child("History").child(cashier).set(historyjson)
+            result = db.child("Cashiers").child(cashier).set(json.loads('{"null": "null"}'))
 
         cherrypy.response.headers['Cache-Control'] = 'no-cache, no-store'
         cherrypy.response.headers['Pragma'] = 'no-cache'

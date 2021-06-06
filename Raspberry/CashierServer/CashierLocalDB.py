@@ -53,9 +53,9 @@ def save_json_file(cash, hist, prod):
             mini_dictionary[c.key()] = c.val()
     dictionary["Products"] = mini_dictionary
 
-    #with open("cashiers_database.json", "w") as f:
+    #with open("CashierLocalDB.json", "w") as f:
         #json.dump(dictionary, f, ensure_ascii=False, indent=4)
-    f = open("cashiers_database.json", "w")
+    f = open("CashierLocalDB.json", "w")
     json.dump(dictionary, f, ensure_ascii=False, indent=4)
 
     f.flush()
