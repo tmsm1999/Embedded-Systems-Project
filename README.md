@@ -122,6 +122,31 @@ By clicking in **History** you have access to the content of the cashiers by dat
   <img src="https://github.com/tmsm1999/Embedded-Systems-Project/blob/master/Wiki%20Images/raspberry cashier history 3.png/" width="200">
 </p>
 
+## Getting started with the Arduino
 
+### How to connect the scale
+
+The scale cables are soldered are soldered to the HX/11 conversor module. Ten connect the HX711 pins to the Arduino pins following the above sequence.
+
+HX711  | Arduino
+------------- | -------------
+GND Pin  | GND Pin
+DT Pin  | A1 Pin
+SCK Pin | A0 Pin
+VCC Pin | 5V Pin
+
+Link the Arduino to a computer via the USB cable. Then put the object on the scale with the RFID tag:
+
+* Once all the cable links are done, the next step is to upload the scale code to the Arduino. First, we identify the product to be weighted by putting the RFID tag close to the NFC shield. 
+* Then we put the object on top of the scale and wait until the value appears on the console. 
+* Finally, to connect the Arduino with the Firebase it is necessary to run the command *python CashierServer.py* that starts the local server.
+
+### How to Install:
+
+* Connect the Wi-Fi shield and the NFC shield on top of the Arduino board.
+* Then connect the Arduino to the computer.
+* *The weight sensor is already attached to the scale.*
+
+**‼️ Warning: Objects can only be weighted after the weight sensor is initialized. Otherwise, the scale fails to output the real weight value.**
 
 
