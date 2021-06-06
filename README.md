@@ -81,6 +81,14 @@ On the other hand, in the **History** screen. Click the cashier you want to chec
 * sed -i -e ''s/\r$//' \*.+'
 * ./scripts/install.sh
 
+### Main code files
+
+* **Cashierserver.py**: This file contains the connections that we stablished between the other systems of the project with firebase. Basically, is the server for the web.
+
+* **scripts.js**: Here we placed the functions that dynamically implements the web page.
+
+* **index.html**: It’s the main page for the server.
+
 ### How to run the service
 
 * Open the terminal and type: ./CashierServer/scripts/start.sh
