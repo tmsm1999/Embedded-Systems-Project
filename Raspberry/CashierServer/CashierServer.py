@@ -27,9 +27,8 @@ class CashierServer:
 
 #tentei por por 2 parametros mas pelo link estava constantemente a dizer que faltava o segundo parametro
     @cherrypy.expose
-    def putdata(self, data):
+    def putdata(self, cashier, product, weight):
         answer = {'state': 'ok'}
-        cherrypy.log(data)
 
         # configuration object
         firebaseConfig = {
@@ -49,19 +48,19 @@ class CashierServer:
         db = firebase.database()
 
         # Cahiers
-#necessário melhorar
-        cashier = data.cashier
-
         cash = db.child("Cashiers").child(cashier).get()
-        chashjson = cash.val()
-        chashjson.update(data.data)
 
-        result = db.child("Cashiers").child(cashier).set(chashjson)
-        
+        newData = {product : weight}
+        data = cash.val()
+        data.update(newData)
+
+        result = db.child("Cashiers").child(cashier).set(data)
+
         cherrypy.response.headers['Cache-Control'] = 'no-cache, no-store'
         cherrypy.response.headers['Pragma'] = 'no-cache'
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return json.dumps(answer).encode('utf-8')
+        
 
 
     @cherrypy.expose
@@ -97,7 +96,7 @@ class CashierServer:
             unixtime: cash.val()
         }
 
-#Não consigo saber o que cash.val() tem
+        #Nao consigo saber o que cash.val() tem
         if(cash.val() != '{"null": "null"}' ):
             # History
             history = db.child("History").child(cashier).get()
