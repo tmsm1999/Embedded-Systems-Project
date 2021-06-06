@@ -78,7 +78,7 @@ On the other hand, in the **History** screen. Click the cashier you want to chec
 * Open Terminal
 * cd CashierServer
 * chmod 777 -R scripts
-* sed -i -e 's/\r$//' *.*
+* sed -i -e ''s/\r$//' \*.+'
 * ./scripts/install.sh
 
 ### How to run the service
@@ -89,7 +89,7 @@ On the other hand, in the **History** screen. Click the cashier you want to chec
 
 ### Communication Protocols:
 
-For the Realtime cashier and history we directly used the Firebase Realtime Database SDK. Here we used a query linked with a listener for all the chamnges that comes form the cashier.
+For the Realtime cashier and history we directly used the Firebase Realtime Database SDK. Here we used a query linked with a listener for all the changes that comes form the cashier.
 
 We used Cherrypy which is a web server serving as general station. We enableded a REST service for the communication of the Android app.
 
