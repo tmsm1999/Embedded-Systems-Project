@@ -15,8 +15,8 @@
 // Set these to run example. 
 #define FIREBASE_HOST "https://weightingcashierse-default-rtdb.europe-west1.firebasedatabase.app/" 
 #define FIREBASE_AUTH "7sP13mBmbaEntwiprBGOHWz1RKVIIdROjXfFvLwD" 
-#define WIFI_SSID "NOS-EC66_EXT"
-#define WIFI_PASSWORD "N5YR7JX9"
+#define WIFI_SSID "preencher"
+#define WIFI_PASSWORD "preencher"
 
 #include "HX711.h"
 #define DT A1 
