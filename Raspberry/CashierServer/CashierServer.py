@@ -96,8 +96,9 @@ class CashierServer:
             unixtime: cash.val()
         }
 
-        #Nao consigo saber o que cash.val() tem
-        if(cash.val() != '{"null": "null"}' ):
+        validatorString = json.dumps(cash.val())
+        #cherrypy.log(str(validatorString == '{"null": "null"}'))
+        if(validatorString != '{"null": "null"}' ):
             # History
             history = db.child("History").child(cashier).get()
             historyjson = history.val()
