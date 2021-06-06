@@ -1,7 +1,11 @@
+//#include <Firebase.h>
+//#include <FirebaseArduino.h>
+//
+
 #include <ESP8266wifi.h>
 #include <WiFi.h>
 #include <SoftwareSerial.h>
-//#include <FirebaseArduino.h>
+//#include <FirebaseESP32.h>
 #include <ArduinoJson.h>  
 #include <PN532.h>
 #include <SPI.h>
@@ -11,8 +15,8 @@
 // Set these to run example. 
 #define FIREBASE_HOST "https://weightingcashierse-default-rtdb.europe-west1.firebasedatabase.app/" 
 #define FIREBASE_AUTH "7sP13mBmbaEntwiprBGOHWz1RKVIIdROjXfFvLwD" 
-#define WIFI_SSID "iPhone"
-#define WIFI_PASSWORD "mozboys2019"
+#define WIFI_SSID "NOS-EC66_EXT"
+#define WIFI_PASSWORD "N5YR7JX9"
 
 #include "HX711.h"
 #define DT A1 
@@ -97,7 +101,9 @@
   byte pn532_packetbuffer[PN532_PACKBUFFSIZ];
 
 
-
+byte server[] = { 192, 168, 1, 99 };
+WiFiClient client;
+int status = WL_IDLE_STATUS;
 
 HX711 escala;
 
@@ -130,10 +136,14 @@ void wifiLink()
   Serial.println();
 }
 
-void getWeight(){ 
- Serial.print("Peso: ");
- Serial.println(escala.get_units(20),3);
- Serial.print(" kg"); 
+ float getWeight(){
+  float peso; 
+  Serial.print("Peso: ");
+  peso = abs(escala.get_units(20));
+  Serial.println(peso);
+  Serial.println(" kg"); 
+
+ return peso;
 }
 
 
@@ -322,24 +332,55 @@ void  wiresendcommand(uint8_t* cmd, uint8_t cmdlen) {
 #endif
 } 
 
- void compareTag(const byte * data, const uint32_t numBytes){
-  const byte * Banana[numBytes] =  {0xF9,0x74,0xD6,0x01}; 
-  const byte * Laranja[numBytes]=  {0x5B,0xE6,0x6C,0x9B};
-  const byte * Uva[numBytes]=      {0xF9,0xD8,0xD3,0x01};
+ String compareTag(const byte * data, const uint32_t numBytes){
+  const byte * Banana[numBytes] =   {0xF9,0x74,0xD6,0x01}; 
+  const byte * Laranja[numBytes]=   {0x5B,0xE6,0x6C,0x9B};
+  const byte * Uva[numBytes]=       {0xF9,0xD8,0xD3,0x01};
+  const byte * Manga[numBytes]=     {0x5B,0xE6,0x6C,0x98};
+  const byte * Framboesa[numBytes]= {0x2C,0x9E,0xD3,0x01};
+  const byte * Amora[numBytes]=     {0x8A,0xDB,0xD3,0x01};
+  
+                                 
+
+
 
    if ((int)Banana[0] == (int)data[0] && (int)Banana[1] == (int)data[1] && (int)Banana[2] == (int)data[2] && (int)Banana[3] == (int)data[3])
    {
-    Serial.println("Is Bananas!");    
+    Serial.println("Bananas!"); 
+    return "Banana";   
    }   
 
    else if((int)Laranja[0] == (int)data[0] && (int)Laranja[1] == (int)data[1] && (int)Laranja[2] == (int)data[2] && (int)Laranja[3] == (int)data[3])
-    Serial.print("Laranjas!!!");
+   {
+    Serial.println("Laranjas!!!");
+    return "Laranja";
+   }
+   else if((int)Uva[0] == (int)data[0] && (int)Uva[1] == (int)data[1] && (int)Uva[2] == (int)data[2] && (int)Uva[3] == (int)data[3])
+   {
+    Serial.println("Uvas!!!");
+    return("Uva");
+   }
 
-  else if(((int)Uva[0] == (int)data[0] && (int)Uva[1] == (int)data[1] && (int)Uva[2] == (int)data[2] && (int)Uva[3] == (int)data[3])==0)
-    Serial.print("Uvas!!!");
+   else if((int)Manga[0] == (int)data[0] && (int)Manga[1] == (int)data[1] && (int)Manga[2] == (int)data[2] && (int)Manga[3] == (int)data[3])
+   {
+    Serial.println("Manga!!!");
+    return("Manga");
+   }
+
+    else if((int)Framboesa[0] == (int)Framboesa[0] && (int)Framboesa[1] == (int)data[1] && (int)Framboesa[2] == (int)data[2] && (int)Framboesa[3] == (int)data[3])
+   {
+    Serial.println("Framboesa!!!");
+    return("Framboesa");
+   }
+
+    else if((int)Amora[0] == (int)Amora[0] && (int)Amora[1] == (int)data[1] && (int)Amora[2] == (int)data[2] && (int)Amora[3] == (int)data[3])
+   {
+    Serial.println("Amora!!!");
+    return("Amora");
+   }
 
   else 
-    Serial.print("Produto não reconhecido");  
+    Serial.println("Produto não reconhecido");  
   }
 
   boolean  readPassiveTargetID(uint8_t cardbaudrate, uint8_t * uid, uint8_t * uidLength) {
@@ -373,17 +414,9 @@ void  wiresendcommand(uint8_t* cmd, uint8_t cmdlen) {
   wirereaddata(pn532_packetbuffer, 20);
   
   // check some basic stuff
-  /* ISO14443A card response should be in the following format:
+  // ISO14443A card response should be in the following format:
   
-    byte            Description
-    -------------   ------------------------------------------
-    b0..6           Frame header and preamble
-    b7              Tags Found
-    b8              Tag Number (only one used in this example)
-    b9..10          SENS_RES
-    b11             SEL_RES
-    b12             NFCID Length
-    b13..NFCIDLen   NFCID                                      */
+                                  
   
 #ifdef MIFAREDEBUG
     Serial.print(F("Found ")); Serial.print(pn532_packetbuffer[7], DEC); Serial.println(F(" tags"));
@@ -421,10 +454,11 @@ void  wiresendcommand(uint8_t* cmd, uint8_t cmdlen) {
   
 
 
-void readCard(){
+String readCard(){
  uint8_t success;
     uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };  // Buffer to store the returned UID
-    uint8_t uidLength;                        // Length of the UID (4 or 7 bytes depending on ISO14443A card type)
+    uint8_t uidLength; 
+    String produto;// Length of the UID (4 or 7 bytes depending on ISO14443A card type)
     
     // Wait for an ISO14443A type cards (Mifare, etc.).  When one is found
     // 'uid' will be populated with the UID, and uidLength will indicate
@@ -433,15 +467,40 @@ void readCard(){
     if(success)
     {
       // Display some basic information about the card
-      Serial.println("Found an ISO14443A card");
-      Serial.print("ID Length: ");
-      Serial.print(uidLength, DEC);
-      Serial.println(" bytes");
-      Serial.print("ID: ");
-      PrintHex(uid, uidLength);
+    //  Serial.println("Found an ISO14443A card");
+    //  Serial.print("ID Length: ");
+    //  Serial.print(uidLength, DEC);
+    //  Serial.println(" bytes");
+     // Serial.print("ID: ");
+     // PrintHex(uid, uidLength);
       Serial.println("");
-      compareTag(uid, uidLength);    
+      produto = compareTag(uid, uidLength);    
       }
+
+      return produto;
+}
+
+
+  void putInfo(String artigo, float peso){
+    
+    String request = "GET /putdata?cashier=1&product=";
+    
+    if (client.connect(server,8080)) {
+
+    Serial.println("connected to server");
+
+    // Make a HTTP request:
+    Serial.println("GET /putdata?cashier=1&product=" + artigo + "&weight=" + peso + " HTTP/1.1");
+
+    client.println("GET /putdata?cashier=1&product=" + artigo + "&weight=" + peso + " HTTP/1.1");
+
+    client.println("Host:192.168.1.99");
+
+    client.println("Connection: close");
+
+    client.println();
+
+  }
 }
  
 void setup() { 
@@ -453,7 +512,7 @@ void setup() {
   wifiLink(); 
 
 // ligação ao firebase
-//  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+// Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
 
 // inicialização da balança
   escala.begin(DT, SCK);
@@ -469,7 +528,7 @@ void setup() {
     pinMode(IRQ, INPUT);
     pinMode(RESET, OUTPUT);
     Serial.begin(115200);
-    Serial.println("Nfc Shield inicializado");
+    //Serial.println("Nfc Shield inicializado");
     WIRE.begin();
 
     // Reset the PN532  
@@ -478,23 +537,45 @@ void setup() {
     delay(500);
     digitalWrite(RESET, HIGH);
     SAMConfig();
-  
-
- 
    
 } 
  
 //int n = 0; 
  
  void loop() { 
- 
+ String artigo;
+ float peso;
   Serial.print("Coloque a tag");
   Serial.println();
-  readCard();
-  Serial.print("Coloque o artigo na balança");
-  Serial.println();
-  delay(5000);
-  getWeight();
-  delay(3000);
+  artigo = readCard();
+  Serial.println("Coloque o artigo na balança");
+  delay(8000);
+  peso = getWeight();
+  putInfo(artigo,peso);
+
+  while (client.available()) {
+
+    char c = client.read();
+    Serial.write(c);
+
+  }
+
+  // if the server's disconnected, stop the client:
+
+  if (!client.connected()) {
+
+    Serial.println();
+
+    Serial.println("disconnecting from server.");
+
+    client.stop();
+
+    // do nothing forevermore:
+
+    while (true);
+
+  }
+  delay(8000);
+  
   
  }
